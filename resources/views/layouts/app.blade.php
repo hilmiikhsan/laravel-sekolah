@@ -59,10 +59,10 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html">SMK INDONESIA</a>
+                        <a href="index.html">SMA INDONESIA</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">SMK</a>
+                        <a href="index.html">SMA</a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">MAIN MENU</li>
@@ -135,7 +135,7 @@
 
                                 @can('permissions.index')
                                     <li class="{{ setActive('admin/permission') }}"><a class="nav-link"
-                                    href="#"><i class="fas fa-key"></i>
+                                    href="{{ route('admin.permission.index') }}"><i class="fas fa-key"></i>
                                     Permissions</a></li>
                                 @endcan
 
