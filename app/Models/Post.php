@@ -18,6 +18,16 @@ class Post extends Model
     protected $guarded = [];
 
     /**
+     * category
+     *
+     * @return void
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    /**
      * image
      *
      * @return Attribute
