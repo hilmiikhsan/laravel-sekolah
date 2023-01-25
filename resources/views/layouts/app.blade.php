@@ -77,7 +77,7 @@
 
                         @can('tags.index')
                         <li class="{{ setActive('admin/tag') }}"><a class="nav-link"
-                                href="#"><i class="fas fa-tags"></i> <span>Tags</span></a>
+                                href="{{ route('admin.tag.index') }}"><i class="fas fa-tags"></i> <span>Tags</span></a>
                         </li>
                         @endcan
 
