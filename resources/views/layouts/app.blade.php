@@ -105,7 +105,7 @@
 
                         @can('videos.index')
                         <li class="{{ setActive('admin/video') }}"><a class="nav-link"
-                                href="#"><i class="fas fa-video"></i>
+                                href="{{ route('admin.video.index') }}"><i class="fas fa-video"></i>
                                 <span>Video</span></a></li>
                         @endcan
 
