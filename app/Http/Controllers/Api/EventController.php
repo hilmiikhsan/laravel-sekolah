@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\Event;
 
-class PostController extends Controller
+class EventController extends Controller
 {
     /**
      * index
@@ -15,13 +15,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->paginate(6);
+        $events = Event::latest()->paginate(4);
         return response()->json([
             "response" => [
                 "status"  => 200,
-                "message" => "List Data Posts"
+                "message" => "List Data Agenda"
             ],
-            "data" => $posts
+            "data" => $events
         ], 200);
     }
 
@@ -33,23 +33,23 @@ class PostController extends Controller
      */
     public function show($slug)
     {
-        $post = Post::where('slug', $slug)->first();
+        $event = Event::where('slug', $slug)->first();
 
-        if ($post) {
+        if ($event) {
 
             return response()->json([
                 "response" => [
                     "status"  => 200,
-                    "message" => "Detail Data Post"
+                    "message" => "Detail Data Agenda"
                 ],
-                "data" => $post
+                "data" => $event
             ], 200);
         } else {
 
             return response()->json([
                 "response" => [
                     "status"  => 404,
-                    "message" => "Data Post Tidak Ditemukan"
+                    "message" => "Data Agenda Tidak Ditemukan"
                 ],
                 "data" => null
             ], 404);
@@ -57,19 +57,19 @@ class PostController extends Controller
     }
 
     /**
-     * PostHomePage
+     * EventHomePage
      *
      * @return void
      */
-    public function PostHomePage()
+    public function EventHomePage()
     {
-        $posts = Post::latest()->take(6)->get();
+        $events = Event::latest()->take(5)->get();
         return response()->json([
             "response" => [
                 "status"  => 200,
-                "message" => "List Data Posts Homepage"
+                "message" => "List Data Agenda Homepage"
             ],
-            "data" => $posts
+            "data" => $events
         ], 200);
     }
 }
